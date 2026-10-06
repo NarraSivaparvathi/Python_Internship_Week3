@@ -1,0 +1,28 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}Register - Task Manager{% endblock %}
+
+{% block content %}
+
+<div class="card" style="max-width: 500px; margin: 40px auto;">
+
+    <h1>Create Account</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">
+            Register
+        </button>
+    </form>
+
+    <p style="margin-top: 20px;">
+        Already have an account?
+        <a href="{% url 'login' %}">Login here</a>
+    </p>
+
+</div>
+
+{% endblock %}
